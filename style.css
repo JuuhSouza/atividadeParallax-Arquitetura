@@ -1,0 +1,173 @@
+@charset "utf-8" ;
+
+@font-face {
+    font-family: fonte1;
+    src: url(./fonte/MOUNTIS.otf);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #074973;
+    
+}
+
+h1, h2{
+    font-weight: 700;
+    color: #36BFB1;
+    text-shadow: 2px 3px 5px#000000;
+    font-family: fonte1;
+    
+}
+
+.wrapper{
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+main{
+    display: block;
+    background-color: #074973;
+}
+
+.container{
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 15px;
+    animation: surgir 5s ;
+    animation-timeline: view();
+    animation-range: cover 0 cover 60%;
+}
+
+section.modulo p{
+    margin-bottom: 30px;
+    text-align: justify;
+    font-size: 2em;
+    color: #fdfeff;
+    font-family: fonte1;
+
+}
+
+section.modulo h2{
+    margin-bottom: 30px;
+    font-size: 4em;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+section.modulo.content{
+    padding: 40px 0;
+    background: #074973;
+}
+
+section.modulo.parallax{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh !important;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-position: 50% 50% ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+section.modulo.parallax h1{
+    color: #ffffff;
+    text-align: center;
+    font-size: 10em;
+    text-transform: uppercase;
+    z-index: 50;
+    margin-top: 2em;
+    
+}
+
+section.modulo.parallax:after{
+    content: "";
+    height: 100%;
+    width: 100%;
+    z-index: 8;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0,0,0,0) 20%, #074973 100%);
+}
+
+section.modulo.parallax-1{
+    background-image:url(https://www.spain.info/.content/imagenes/cabeceras-grandes/pais-vasco/guggenheim-bilbao-c-jon-chica-s536090779.jpg);
+}
+
+section.modulo.parallax-2{
+    background-image:url(https://static.mundoeducacao.uol.com.br/mundoeducacao/2023/09/esfinge-em-frente-a-piramide-de-khafre-estruturas-construidas-no-egito-antigo-uma-das-civilizacoes-mais-antigas-do-mundo.jpg);
+}
+
+.galeria {
+
+    margin: 2em;
+    display: flex;
+    height: 25em;
+    gap: 1em;
+
+}
+
+.galeria div{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+   flex: 1.5;
+   transition: all 0.9s cubic-bezier(0.165, 0.84, 0.44, 1)
+}
+
+.galeria div:hover{
+    flex:2;
+   
+}
+
+.galeria:hover div:not(:hover){
+    filter: grayscale(10) blur(2px);
+}
+
+@keyframes surgir{
+    from{
+        opacity: 0;
+        translate: -100vw 0;
+    }
+
+    to{ 
+    opacity: 1;
+    translate: 0 0;}
+}
+
+footer{
+    text-align: center;
+    color: #ffffff;
+    background-color: #074973;
+    font-size: 1em;
+}
+
+@media all and (max-width: 820px) {
+
+    body{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    /*     overflow-y: hidden;  tirar a rolagem*/
+    }
+    
+    section.modulo p{
+        margin-bottom: 15px;
+        text-align: center;
+        font-size: 2em;
+        padding-right: 25px;
+    }
+
+    section.modulo.parallax h1{
+    color: #ffffff;
+    font-size: 5em;
+    text-transform: uppercase;
+    z-index: 50;
+    margin-top: 4em;
+
+    
+ }
